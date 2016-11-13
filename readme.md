@@ -198,7 +198,17 @@ $ git log --graph --pretty=oneline --abbrev-commit
 *   b53ce9a Merge branch 'dev'
 ```
 
-* 最后删除分支a 
+* 如果需要删除分支最后删除分支，如果不需要，保留这个分支，但是发现分支的信息全部没了，原因是git采用了`Fast forward`模式
+
+* 强制禁止`Fast forward`模式
+
+```
+$ git merge --no-ff -m "merge with no-ff" dev
+```
+
+##Bug分支
+
+* 当正在dev分支中工作时，工作到一半，测试发现master中出现了一个bug需要紧急解决，这个可以对master分出一个bug分支，而dev需要`sta`
 
 
 
