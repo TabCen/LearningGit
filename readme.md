@@ -122,6 +122,88 @@ Checking connectivity... done.
 ```
 <font color=#EB3434 size=3 face="黑体">Git支持多种`协议`，包括`https`，但通过`ssh`支持的原生git协议速度最快。</font>
 
+##创建分支&合并分支
+
+* 首先创建分支，并且切换到分支
+
+```
+$ git checkout -b dev
+M	readme.md
+Switched to a new branch 'dev'
+```
+* `git checkout`命令加上`-b`参数表示创建并切换，相当于以下两条命令：
+
+ 
+``` 
+$ git branch dev
+$ git checkout dev
+Switched to branch 'dev'
+```
+
+* `git branch`查看分支 ,当前分支前面会标一个*号。
+
+```
+$ git branch
+* dev
+  master
+```
+
+* `git merge`合并指定分支到当前分支，所以一般要先将分支切换到需要合并的分支。
+
+```
+$ git merge dev
+Updating 113dfee..aa4fbfc
+Fast-forward
+ test.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+```
+
+* `$ git branch -d dev`删除分支
+
+```
+$ git branch -d dev
+Deleted branch dev (was aa4fbfc).
+
+```
+>小结
+>>	查看分支：git branch</br>
+>>	创建分支：git branch name</br>
+>>	切换分支：git checkout name</br>
+>>	创建+切换分支：git checkout -b name</br>
+>>	合并某分支到当前分支：git merge name</br>
+>>	删除分支：git branch -d name </br>
+
+##解决冲突
+
+* 合并分支时出现冲突
+
+```
+$ git merge dev
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+```
+* 解决完冲突后需要将文件再次提交
+* `$ git log --graph`查看分支合并图
+
+```
+$ git log --graph --pretty=oneline --abbrev-commit
+*   ef741b1 解决了冲突
+|\  
+| * 4425bf8 addtest.txt
+* | cb4b618 删除了一些东西
+|/  
+*   b53ce9a Merge branch 'dev'
+```
+
+* 最后删除分支a 
+
+
+
+
+
 
 
 
