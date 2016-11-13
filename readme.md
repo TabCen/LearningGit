@@ -210,9 +210,16 @@ $ git merge --no-ff -m "merge with no-ff" dev
 
 * 当正在dev分支中工作时，工作到一半，测试发现master中出现了一个bug需要紧急解决，这个可以对master分出一个bug分支，而dev需要`stash`
 
+```
+git stash			<!--将修改暂存-->
+git stash pop		<!--还原保存-->
+git stash list 	<!--查看stash-->
+```
 
+##标签管理
+```
 
-adfadsfadsf
+```
 
 
 
