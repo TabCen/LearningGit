@@ -1,4 +1,7 @@
 #Git学习教程
+>廖雪峰课程 [链接](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
+
 ##创建git版本库*repository*
 * `git init`创建文件，进入文件目录下进行创建<font color=#EB3434 size=2 face="黑体">尽量不要取中文目录</font>
 
@@ -210,31 +213,20 @@ $ git merge --no-ff -m "merge with no-ff" dev
 
 * 当正在dev分支中工作时，工作到一半，测试发现master中出现了一个bug需要紧急解决，这个可以对master分出一个bug分支，而dev需要`stash`
 
+```
+git stash			<!--将修改暂存-->
+git stash pop		<!--还原保存-->
+git stash list 	<!--查看stash-->
+```
 
+##标签管理
+`git tag <name>`用于新建一个标签，默认为HEAD，也可以指定一个commit id；
 
+`git tag -a <tagname> -m "blablabla..."`可以指定标签信息；
 
-adfadsfadsf
+`git tag -s <tagname> -m "blablabla..."`可以用PGP签名标签；
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+`git tag`可以查看所有标签。
 
 ------
 #命令行指令
