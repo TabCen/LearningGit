@@ -65,6 +65,9 @@ $git add <file>
 
 ```
 $git commit -m "备注"
+
+//可以跳过添加到暂存区直接提交
+$git commit -a -m "备注"
 ```
 
 - 查看状态
@@ -81,4 +84,36 @@ $git status --short
 ```
 
 - 忽略文件
+
+```
+创建.gitignore文件
+$ cat .gitignore
+*.[oa]
+*~
+
+```
+
+- 查看修改
+
+```
+//查看未暂存的改动，而不是上次提交的所有改动 
+git diff 
+//查看已经暂存区的改动
+git diff --staged	／git diff --cached
+(效果一样)
+
+//使用插件来查看修改
+git difftool --tool-help 
+```
+
+- 移除文件
+
+```
+
+
+```
+
+
+
+
 
